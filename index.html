@@ -11,17 +11,17 @@
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Oleo+Script:wght@700&display=swap');
 
         :root {
-            --bg-color-1: #0A1220; 
-            --bg-color-2: #101C35; 
+            --bg-color-1: #040914; 
+            --bg-color-2: #08152b; 
             --accent-main: #2196F3; 
             --accent-hover: #42A5F5; 
             --accent-bright: #7DD3FC; 
             --text-dark: #F5FAFF; 
             --text-muted: #B8DFFF; 
             
-            --glass-bg: rgba(10, 20, 40, 0.55); 
-            --glass-border: rgba(125, 211, 252, 0.45);
-            --glass-highlight: rgba(255, 255, 255, 0.35);
+            --glass-bg: rgba(8, 18, 40, 0.65); 
+            --glass-border: rgba(110, 168, 255, 0.18);
+            --glass-highlight: rgba(30, 90, 180, 0.10);
             
             /* =========================================
                EDITAR TAMAÑOS Y TRANSPARENCIAS DE SOMBRAS AQUI:
@@ -32,10 +32,10 @@
                rgba(232, 131, 166, 0.1) -> Color de la sombra. El último número (ej. 0.1) es la TRANSPARENCIA. 
                                            0.1 = muy invisible, 0.9 = muy oscura/sólida.
                ========================================= */
-            --shadow-sm: 0 4px 12px rgba(33, 150, 243, 0.15);
-            --shadow-md: 0 8px 24px -4px rgba(33, 150, 243, 0.25);
-            --shadow-lg: 0 16px 40px -8px rgba(33, 150, 243, 0.35);
-            --shadow-hover: 0 24px 48px -12px rgba(125, 211, 252, 0.45);
+            --shadow-sm: 0 4px 12px rgba(27, 42, 74, 0.25);
+            --shadow-md: 0 8px 24px -4px rgba(27, 42, 74, 0.35);
+            --shadow-lg: 0 16px 40px -8px rgba(27, 42, 74, 0.45);
+            --shadow-hover: 0 24px 48px -12px rgba(110, 168, 255, 0.35);
             
             --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -111,7 +111,7 @@
 
         .ambient-background {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2;
-            background: linear-gradient(135deg, rgba(125, 211, 252, 0.55), rgba(186, 230, 253, 0.65));
+            background: linear-gradient(135deg, rgba(3, 12, 35, 0.78), rgba(6, 20, 55, 0.82));
             pointer-events: none;
         }
 
@@ -179,13 +179,13 @@
     height: clamp(500px, 80vh, 85vh);
     margin-top: clamp(3rem, 8vh, 5rem);
 
-    background: rgba(5, 15, 35, 0.40);
+    background: rgba(2, 10, 28, 0.78);
 
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(16px) brightness(.75);
+-webkit-backdrop-filter: blur(16px) brightness(.75);
 
-    border: 1px solid rgba(0, 191, 255, 0.5);
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(0, 17, 255, 0.5);
+    border-top: 1px solid rgba(40,120,255,0.15);
 
     border-radius: 32px;
     box-shadow: var(--shadow-lg);
@@ -235,7 +235,7 @@
             margin-bottom: 0.5rem; box-shadow: var(--shadow-sm);
         }
         .avatar-mini {
-            width: 32px; height: 32px; border-radius: 50%; background: var(--bg-color-1);
+            width: 45px; height: 45px; border-radius: 50%; background: var(--bg-color-1);
             border: 2px solid white; overflow: hidden; display: flex; justify-content: center; align-items: center;
             transition: transform 0.3s ease; /* Transición suave ajustada */
         }
@@ -511,22 +511,47 @@
 
         /* NUEVAS CLASES PARA BOTONES DE FRIENDS */
         .friends-list {
-            display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(1rem, 2vw, 1.5rem);
-            width: 100%; max-width: 600px; margin-top: 1vh;
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;
+            width: 100%; max-width: 900px; margin-top: 1vh;
         }
         .friend-btn {
-            min-width: 130px; font-size: clamp(0.9rem, 1.8vh, 1.1rem);
-            display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0.5rem;
-            padding-left: 0.8rem; /* Ajuste sutil para balancear el avatar */
-        }
+    width: 220px;
+    height: 220px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #111827;
+
+    border: 2px solid #0b36f8;
+    border-radius: 15px;
+
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+
+    box-shadow: 0 0 15px rgba(0,229,255,.3);
+}
         .friend-avatar {
-            width: 85px; height: 85px; /* 1️⃣ Tamaño base aumentado sin deformar */
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(255, 255, 255, 0.8);
-            flex-shrink: 0;
-            transition: transform 0.35s ease-in-out; /* Animación suave */
-        }
+    width: 160px;
+    height: 160px;
+
+    border-radius: 12px; /* cuadrado con esquinas suaves */
+
+    object-fit: cover;
+
+    border: 2px solid #00e5ff;
+
+    flex-shrink: 0;
+
+    transition: transform 0.35s ease-in-out;
+
+    box-shadow: 0 0 15px rgba(0,229,255,.5);
+}
         
         .friend-avatar:hover {
             transform: scale(2.2); /* 2️⃣ Zoom notable (+50px aprox visualmente) sin mover el resto */
@@ -556,12 +581,8 @@
         .photo-gallery {
             display: flex; flex-direction: row; gap: 1.5rem; width: 100%;
             flex: 1; overflow-x: auto; overflow-y: hidden; padding: 0 1.5rem 2rem 1.5rem; align-items: center; justify-content: flex-start; /* FIX: Evita que el lado izquierdo se corte en móviles */
-            -webkit-overflow-scrolling: touch; /* NUEVO: Scroll suave nativo en iOS */
-            cursor: grab; /* Indica que se puede arrastrar */
-            
-            /* SOPORTE FIREFOX: Scrollbar rosa y fino */
-            scrollbar-width: thin; 
-            scrollbar-color: rgba(255, 105, 180, 0.5) transparent; 
+                        
+            animation: scrollGallery 20s linear infinite;
         }
         .photo-gallery:active { cursor: grabbing; }
 
@@ -713,7 +734,19 @@
                 padding: 0.5rem; 
             }
             .tab-content { padding: 1rem; }
-        }
+        } 
+              
+        @keyframes scrollGallery {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+        
     </style>
 </head>
 <body>
@@ -872,7 +905,7 @@
 
                         <div class="player-controls">
                             <svg class="icon-svg" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
-                            <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.01" value="0.3">
+                            <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.01" value="1">
                             <svg class="icon-svg" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
                         </div>
                     </div>
@@ -1056,7 +1089,7 @@
             const volumeSlider = document.getElementById('volume-slider');
             const musicUI = document.getElementById('music-ui');
             let isPlaying = false;
-            audio.volume = volumeSlider.value;
+            audio.volume = 1; volumeSlider.value = 1;
             btnPlayPause.addEventListener('click', () => {
                 if (isPlaying) {
                     audio.pause();
